@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <title>Baixar e Compartilhar Formulário</title>
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <script>
+        function gerarJSON(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            
+            var form = document.getElementById("meuFormulario");
+            var dadosFormulario = new FormData(form);
+            var json = {};
+
+            // Converte FormData para JSON
+            dadosFormulario.forEach((valor, chave) => {
+                json[chave] = valor;
+            });
+
+            // Converte o JSON para uma string e cria um Blob
+            var jsonString = JSON.stringify(json, null, 2);
+            var blob = new Blob([jsonString], { type: 'application/json' });
+
+            // Cria um link para baixar o arquivo
+            var link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+            link.download = "formulario.json";
+            link.click(); // Aciona o clique para iniciar o download
+
+					// Cria um link para compartilhar no WhatsApp
+					var mensagem = encodeURIComponent("Confira o formulário que acabei de baixar.");
+					var whatsappLink = "https://api.whatsapp.com/send?text=" + mensagem;
+
+					// Exibe um link para compartilhar no WhatsApp
+					var whatsappAnchor = document.getElementById("whatsappLink");
+					whatsappAnchor.href = whatsappLink;
+					whatsappAnchor.style.display = "block"; // Mostra o link
+				}
+		</script>
+</head>
+<body>
+
+	<div class="containe">
+		<div class="container-formulario">
+
+				<div class="formulario-fist">
+					<h1>Como solictar um serviço?</h1>
+					<p>Para gerar uma solicitação de serviço, você precisa seguir duas etapas: preencher o formulário e clicar em "Gerar Solicitação". Em seguida, envie essa solicitação pelo WhatsApp logo após o preenchimento do formulário.</p>
+				</div>
+
+
+			<form id="meuFormulario" onsubmit="gerarJSON(event)">
+
+				<div class="formulario-one">
+					<h1>Tipo:</h1>
+					<input type="radio" id="item1" name="tipo" value="Municipal">
+					<label for="item1">Municipal</label><br>
+					<input type="radio" id="item2" name="tipo" value="Intermunicipal">
+					<label for="item2">Intermunicipal</label><br>
+					<input type="radio" id="item3" name="tipo" value="Interestadual">
+					<label for="item3">Interestadual</label><br>
+				</div>
+
+				<div class="formulario-one">
+					<h1>Solicitação:</h1>
+					<input type="radio" id="xxxx" name="Solicitacao" value="CMA (Araxa)">
+					<label for="xxxx">CMA (Araxa)</label><br>
+
+					<input type="radio" id="xxxx" name="Solicitacao" value="CMT (Tapira)">
+					<label for="xxxx">CMT (Tapira)</label><br>
+	 
+					<input type="radio" id="xxxx" name="Solicitacao" value="CMP (Patrocinio)">
+					<label for="xxxx">CMP (Patrocinio)</label><br>
+				</div>
+
+
+				<div class="formulario-one">
+					<h1>Data:</h1>
+					<label for="campoDataHora">Data e Hora:</label>
+					<input type="date" id="campoDataHora" name="campoDataHora"><br><br>
+				</div>
+
+				<div class="formulario-one">
+					<h1>Centro de custo:</h1>
+					<label for="campoDinheiro">Valor (R$):</label>
+					<input type="text" id="campoDinheiro" name="campoDinheiro"><br><br>
+				</div>
+
+				<div class="formulario-one">
+					<h2>Solicitante:</h2>
+					<label for="campoNome">Nome:</label>
+					<input type="text" id="campoNome" name="campoNome"><br><br>
+				</div>
+
+				<div class="formulario-one">
+					<h2>Descrição do transporte/ itinerário realizado:</h2>
+					<label for="campoTexto"></label><br>
+					<textarea id="campoTexto" name="campoTexto" rows="5" cols="30"></textarea><br><br>
+				</div>
+
+
+				<div class="formulario-one">
+					<h2>Nome dos empregados e/ou pessoas Transportadas:</h2>
+					<label for="campopesso"></label><br>
+					<textarea id="campopesso<a></a>" name="campopessoa" rows="5" cols="30"></textarea><br><br>
+				</div>
+
+				<input type="submit" class="button-submit"value="Criar solicitação">
+			</form>
+
+			<div class="formulario-fist-whatsapp">
+				<h1>Envie asolicitação para o WhatsApp</h1>
+			</div>
+
+			<button class="button-submitt">
+				<a href="https://wa.me/5599999999">
+					Finalizar solicitação no whatsapp
+				</a>
+			</button>
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
+
+
+

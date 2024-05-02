@@ -1,0 +1,124 @@
+
+
+ h1 {
+        font-size: 25px;
+}
+body{
+
+	background-color: #ede6f6;
+}
+.containe {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #ede6f6;
+
+}
+
+.container-formulario {
+	width: 1020px;
+	height: 100vh;
+	align-items: top;
+
+}
+
+.formulario-fist-whatsapp {
+        height: 230px;
+        width: 50vw;
+        box-sizing: border-box;
+        background-color: white;
+        border-top: 12px solid #075e54;
+        border-radius: 10px;
+        margin: 13px;
+        margin-bottom: 0;
+        padding: 10px;
+        padding-left: 30px;
+       font-family: 'Roboto', sans-serif;
+   }
+
+
+.formulario-fist {
+        height: 230px;
+        width: 50vw;
+        box-sizing: border-box;
+        background-color: white;
+        border-top: 12px solid #663ab5;
+        border-radius: 10px;
+        margin: 13px;
+        margin-bottom: 0;
+        padding: 10px;
+        padding-left: 30px;
+       font-family: 'Roboto', sans-serif;
+   }
+
+.formulario-one {
+	height: 230px;
+    width: 50vw;
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 10px;
+	margin: 13px;
+	margin-bottom: 0;
+	padding: 10px;
+	padding-left: 30px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.formulario-one:hover {
+	border-left: 5px solid violet;
+}
+
+.formulario-fist:hover {
+	border-left: 5px solid violet;
+}
+
+.formulario-fist-whatsapp:hover {
+	border-left: 5px solid #128c7e;
+}
+
+.button-submit {
+	margin: 13px;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding: 8px 19px;
+        border-radius: 3px;
+        background-color: #663ab5;
+        border: none;
+        color: white;
+
+}
+
+.button-submitt {
+	margin: 13px;
+        margin-left: 0;
+        margin-bottom: 0;
+        padding: 8px 19px;
+        border-radius: 3px;
+        background-color: #128c7e;
+        border: none;
+        color: white;
+
+}
+
+.button-submitt:hover {
+        background-color: #25d366;
+        transition: ease-in 200ms;
+}
+
+.button-submit:hover {
+        background-color: #452286;
+        transition: ease-in 200ms;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
